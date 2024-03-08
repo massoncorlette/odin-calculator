@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
@@ -14,34 +13,35 @@
       <div class="calc-header">Magic Calculator</div>
       <div class="divider"></div>
       <div class="display-container">
-        <div class="screen"></div>
+        <div class="screen">
+        </div>
       </div>
       <div class="button-interface">
         <div class="upper">
-          <btn></btn>
-          <btn></btn>
-          <btn></btn>
-          <btn></btn>
-          <btn></btn>
-          <btn></btn>
-          <btn></btn>
-          <btn></btn>
-          <btn></btn>
-          <btn></btn>
+          <btn id="add" class="operators">+</btn>
+          <btn id="sub" class="operators">-</btn>
+          <btn id="mult" class="operators">X</btn>
+          <btn id="divide" class="operators">÷</btn>
+          <btn id="power" class="operators">√</btn>
+          <btn class="num">1</btn>
+          <btn class="num">2</btn>
+          <btn class="num">3</btn>
+          <btn class="num">4</btn>
+          <btn class="num">5</btn>
         </div>
         <div class="lower">
           <div class="button-division">
-            <btn></btn>
-            <btn></btn>
-            <btn></btn>
-            <btn></btn>
-            <btn id="c"></btn>
-            <btn></btn>
-            <btn></btn>
-            <btn></btn>            
+            <btn class="num">6</btn>
+            <btn class="num">7</btn>
+            <btn class="num">8</btn>
+            <btn class="num">9</btn>
+            <btn id="c">C</btn>
+            <btn id="back" class="operators">⌫</btn>
+            <btn id="dec" class="operators dec">.</btn>
+            <btn id="perc" class="operators">%</btn>            
           </div>
           <div class="equals">
-            <btn id="equal"></btn>
+            <btn id="equal">=</btn>
           </div>    
         </div>
       </div>
