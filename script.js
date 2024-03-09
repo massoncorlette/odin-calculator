@@ -2,35 +2,46 @@ let currentNumber;
 let addedNum;
 let operator;
 
-function display(currentNum) {
+function displayScreen(currentNum) {
   let display = document.querySelector('.screen');
   let clear = document.querySelector('#c');
-  let allBtns = document.querySelectorAll('btn');
+  let btnsOps = document.querySelectorAll('.operators');
   let btnsNums = document.querySelectorAll('.num')
   // using .forEach method instead of for loop
   btnsNums.forEach((button) => {
     button.addEventListener('click', () => {
       display.textContent += button.textContent;
-      currentNum += display.textContent;
+      currentNumber += display.textContent;
+    });
+  });
+  btnsOps.forEach((button) => {
+    button.addEventListener('click', () => {
+      operateResult()
     });
   });
   // the delete listener to clear variables and screen
   clear.addEventListener('click',() => {
     display.textContent = null;
     currentNumber = null;
-    currentNum = null;
   })
-  // adding the pressed numbers to global var
-  currentNumber += currentNum;
+  currentNum = currentNumber;
+  return currentNum;
 } 
-display();
+displayScreen();
 console.log(currentNumber);
 
-function operateResult(currentNum,numTwo,functionCallBack) {
-  let display = document.querySelector('.screen');
-  display.textContent = null;
-  display(numTwo);
-  return functionCallBack(currentNum,numTwo);
+function operateClick(currentNum,numTwo,functionCallBack) {
+  let screen = document.querySelector('.screen');
+  let equal = document.querySelector('#equal');
+  screen.textContent = null;
+
+  btnsNums.forEach((button) => {
+    button.addEventListener('click', () => {
+      display.textContent += button.textContent;
+      addedNum += display.textContent;
+    });
+  });
+  equal.addEventListener('click')
 }
 
 function add(valueOne, valueTwo) {
@@ -52,6 +63,7 @@ function multiply(values) {
 function power(valueOne, valueTwo) {
   return (valueOne ** valueTwo)
 };
+
 
 const adding = document.querySelector('#add')
 adding.addEventListener('click',operateResult() );
