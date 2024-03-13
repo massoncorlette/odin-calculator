@@ -67,8 +67,3 @@ function power(valueOne, valueTwo) {
 
 const adding = document.querySelector('#add')
 adding.addEventListener('click',operateResult() );
-
-
-
-
-
