@@ -2,7 +2,6 @@
 @import url('https://www.w3schools.com/lib/w3-theme-black.css');
 @import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap');
-* {border: 0px Solid red}
 
 body {
   height: 120vh;
@@ -51,7 +50,20 @@ body {
   align-items: center;
 }
 
+.screen-inner {
+  position: absolute;
+  margin-left: 150px;
+  height: 50px; 
+  width: 150px;
+  background-color: #8cb415; 
+  box-shadow: inset 5px 5px 20px rgba(31, 30, 30, 0.25); 
+  border-style: inset;
+  border-color: #90be03;
+  border-width: 2px;
+}
+
 .screen {
+  position: relative;
   height: 70px;
   width: 350px;
   background-color: #739900;
@@ -60,6 +72,7 @@ body {
   border-color: #719602;
   border-width: 3px;
 }
+
 
 .button-interface {
   display: flex;
@@ -97,10 +110,9 @@ btn:hover {
 
 #equal {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 185px;
-  margin-right: 4px;
   background-color: rgb(43, 170, 170);
   border-color: #6bd0e2;
   font-size: 24px;
@@ -113,18 +125,16 @@ btn:hover {
 
 .operators {
   display: flex;
-  justify-content: center;
   align-items: center;
-  font-size: 22px;
+  justify-content: center;
 }
 
 .operators.dec {
   font-size: 40px;
 }
 
-.lower {
+.opbtn {
   display: flex;
-  flex: 1;
   flex-direction: row;
 }
 .upper, .button-division {
@@ -135,8 +145,5 @@ btn:hover {
   justify-content: space-around;
 }
 
-.button-division {
-  margin-right: 4px;
-}
 
 

@@ -1,80 +1,50 @@
-<<<<<<< Updated upstream
-let currentNumber;
-let addedNum;
-let operator;
-=======
-let addedNumber= "";
+let addedNumber = "";
 let currentNumber = null;
->>>>>>> Stashed changes
+let operationBtn = "";
 
-function displayScreen(currentNum) {
+function displayScreen() {
   let display = document.querySelector('.screen');
+  let innerDisplay = document.querySelector('.screen-inner');
   let clear = document.querySelector('#c');
   let btnsOps = document.querySelectorAll('.operators');
   let btnsNums = document.querySelectorAll('.num')
-  let btnsOps = document.querySelectorAll('.operators');
-  // using .forEach method instead of for loop
+  // for every numsBtn pressed
   btnsNums.forEach((button) => {
     button.addEventListener('click', () => {
       display.textContent += button.textContent;
-<<<<<<< Updated upstream
-      currentNumber += display.textContent;
-    });
-  });
-  btnsOps.forEach((button) => {
-    button.addEventListener('click', () => {
-      operateResult()
-=======
       addedNumber += button.textContent;
->>>>>>> Stashed changes
     });
   });
+  // for every opsBtn pressed
   btnsOps.forEach((button) => {
     button.addEventListener('click', () => {
       if (currentNumber === null) {
         currentNumber = parseFloat(addedNumber);
-        display.textContent = null;
-        currentNumber = addedNumber;
+        display.textContent += button.textContent;
+        addedNumber = "";
       }else{
         if (addedNumber !== "") {
-          currentNumber = operate(currentNumber,parseFloat(addedNumber),this.id)
-          display.textContent = currentNumber.toString();
+          currentNumber = operate(currentNumber,parseFloat(addedNumber),operationBtn);
+          innerDisplay.textContent = currentNumber;
+          display.textContent += button.textContent;
           addedNumber = "";
-        }     
-      }
+        };
+        display.textContent = null;    
+      };
+      operationBtn = button.id;
     });
   });
   // clear variables and screen
   clear.addEventListener('click',() => {
     display.textContent = null;
+    innerDisplay.textContent = null;
     currentNumber = null;
-<<<<<<< Updated upstream
-  })
-  currentNum = currentNumber;
-  return currentNum;
-} 
-=======
+    addedNumber = "";
   });
 };
->>>>>>> Stashed changes
+// function call
 displayScreen();
-console.log(currentNumber);
 
-<<<<<<< Updated upstream
-function operateClick(currentNum,numTwo,functionCallBack) {
-  let screen = document.querySelector('.screen');
-  let equal = document.querySelector('#equal');
-  screen.textContent = null;
-
-  btnsNums.forEach((button) => {
-    button.addEventListener('click', () => {
-      display.textContent += button.textContent;
-      addedNum += display.textContent;
-    });
-  });
-  equal.addEventListener('click')
-}
-=======
 function operate(valueOne,valueTwo,operator) {
   switch(operator) {
     case 'add':
@@ -89,7 +59,6 @@ function operate(valueOne,valueTwo,operator) {
         return power(valueOne, valueTwo);
   };
 };
->>>>>>> Stashed changes
 
 function add(valueOne, valueTwo) {
 	return (valueOne + valueTwo);
@@ -99,21 +68,15 @@ function sub(valueOne, valueTwo) {
 	return (valueOne - valueTwo);
 };
 
-function addSum(values) {
-  return values.reduce((currentTotal, currentNum) => currentTotal + currentNum);
+function multiply(valueOne, valueTwo) {
+ return (valueOne * valueTwo);
 };
 
-function multiply(values) {
- return values.reduce((currentTotal, currentNum) => currentTotal * currentNum);
-};
+function divide(valueOne,valueTwo) {
+  return (valueOne / valueTwo);
+}
 
 function power(valueOne, valueTwo) {
   return (valueOne ** valueTwo)
 };
 
-<<<<<<< Updated upstream
-
-const adding = document.querySelector('#add')
-adding.addEventListener('click',operateResult() );
-=======
->>>>>>> Stashed changes
